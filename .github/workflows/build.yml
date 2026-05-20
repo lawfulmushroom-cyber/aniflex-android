@@ -1,0 +1,20 @@
+name: Build APK 
+on: 
+  push: 
+    branches: [ main ] 
+jobs: 
+  build: 
+    runs-on: ubuntu-22.04 
+    steps: 
+    - uses: actions/checkout@v4 
+    - name: Setup Python 
+      uses: actions/setup-python@v4 
+      with: 
+        python-version: '3.9' 
+    - name: Build APK 
+Unknown command/target android
+    - name: Upload APK 
+      uses: actions/upload-artifact@v4 
+      with: 
+        name: aniflex-apk 
+        path: bin/*.apk 
